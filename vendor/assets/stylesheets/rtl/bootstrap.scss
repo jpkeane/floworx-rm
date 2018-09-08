@@ -33,7 +33,7 @@ $rtl-support: true;
 @import '../../../node_modules/bootstrap/scss/popover';
 @import '../../../node_modules/bootstrap/scss/carousel';
 
-// We need to wrap some utility classes to properly handle RTL layout
+// We need to pages some utility classes to properly handle RTL layout
 @import '../../../node_modules/bootstrap/scss/utilities/align';
 @import '../../../node_modules/bootstrap/scss/utilities/background';
 html:not([dir=rtl]) { @import '../../../node_modules/bootstrap/scss/utilities/borders'; }
