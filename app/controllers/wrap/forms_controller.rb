@@ -59,6 +59,5 @@ module Wrap
     def wizard
       @title = 'SmartWizard - Forms'
     end
-
   end
 end

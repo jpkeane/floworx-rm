@@ -35,6 +35,5 @@ module Wrap
     def vegasjs
       @title = 'Vegas.js - Miscellaneous'
     end
-
   end
 end

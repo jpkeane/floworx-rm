@@ -31,6 +31,5 @@ module Wrap
     def sparkline
       @title = 'Sparkline - Charts'
     end
-
   end
 end

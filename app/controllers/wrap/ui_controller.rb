@@ -103,6 +103,5 @@ module Wrap
     def treeview
       @title = 'Treeview - UI elements'
     end
-
   end
 end

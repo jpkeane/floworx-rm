@@ -20,7 +20,6 @@ module Wrap
       def product_list
         @title = 'Product list - Pages'
       end
-
     end
   end
 end

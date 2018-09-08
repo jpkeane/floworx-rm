@@ -6,12 +6,12 @@ module Wrap
 
     def chat
       @title = 'Chat - Pages'
-      render layout: "main/layout-2-flex"
+      render layout: 'main/layout-2-flex'
     end
 
     def clients
       @title = 'Clients - Pages'
-      render layout: "main/layout-2-flex"
+      render layout: 'main/layout-2-flex'
     end
 
     def contacts
@@ -36,7 +36,7 @@ module Wrap
 
     def invoice_print
       @title = 'Invoice (Print version) - Pages'
-      render layout: "main/layout-blank"
+      render layout: 'main/layout-blank'
     end
 
     def invoice
