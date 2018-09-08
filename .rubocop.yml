@@ -3,6 +3,8 @@ Rails:
 
 Metrics/LineLength:
   Max: 120
+  Exclude:
+    - 'config/routes.rb'
 
 Metrics/AbcSize:
   Max: 20
@@ -47,13 +49,15 @@ Metrics/BlockLength:
     - 'Rakefile'
     - '**/*.rake'
     - 'spec/**/*.rb'
+    - 'config/routes.rb'
 
 AllCops:
   Exclude:
+    - 'config/initializers/assets.rb'
     - 'db/**/*'
     - 'script/**/*'
     - 'bin/**/*'
     - 'config/environments/**/*'
     - 'node_modules/**/*'
     - !ruby/regexp /old_and_unused\.rb$/
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.5
