@@ -20,7 +20,7 @@
   <ul class="sidenav-inner<% if local_assigns[:horizontal] != true %> py-1<% end %>">
 
     <!-- Dashboards -->
-    <li class="sidenav-item<%= current_page_path?('/dashboards/') || request.path == '/' ? ' active open' : '' %>">
+    <li class="sidenav-item<%= current_page_path?('/wrap/dashboards/') || request.path == '/' ? ' active open' : '' %>">
       <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-md-speedometer"></i><div>Dashboards</div></a>
 
       <ul class="sidenav-menu">
@@ -43,7 +43,7 @@
     </li>
 
     <!-- Layouts -->
-    <li class="sidenav-item<%= current_page_path?('/layout-examples/') ? ' active open' : '' %>">
+    <li class="sidenav-item<%= current_page_path?('/wrap/layout-examples/') ? ' active open' : '' %>">
       <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-ios-albums"></i><div>Layouts</div></a>
 
       <ul class="sidenav-menu">
@@ -91,7 +91,7 @@
     </li>
 
     <!-- UI elements -->
-    <li class="sidenav-item<%= current_page_path?('/ui/') ? ' active open' : '' %>">
+    <li class="sidenav-item<%= current_page_path?('/wrap/ui/') ? ' active open' : '' %>">
       <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-md-cube"></i><div>User inteface</div></a>
 
       <ul class="sidenav-menu">
@@ -177,7 +177,7 @@
     </li>
 
     <!-- Forms -->
-    <li class="sidenav-item<%= current_page_path?('/forms/') ? ' active open' : '' %>">
+    <li class="sidenav-item<%= current_page_path?('/wrap/forms/') ? ' active open' : '' %>">
       <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-md-switch"></i><div>Forms</div></a>
 
       <ul class="sidenav-menu">
@@ -230,7 +230,7 @@
     </li>
 
     <!--  Tables -->
-    <li class="sidenav-item<%= current_page_path?('/tables/') ? ' active open' : '' %>">
+    <li class="sidenav-item<%= current_page_path?('/wrap/tables/') ? ' active open' : '' %>">
       <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-md-grid"></i><div>Tables</div></a>
 
       <ul class="sidenav-menu">
@@ -250,7 +250,7 @@
     </li>
 
     <!-- Charts -->
-    <li class="sidenav-item<%= current_page_path?('/charts/') ? ' active open' : '' %>">
+    <li class="sidenav-item<%= current_page_path?('/wrap/charts/') ? ' active open' : '' %>">
       <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-md-pie"></i><div>Charts</div></a>
 
       <ul class="sidenav-menu">
@@ -282,7 +282,7 @@
     </li>
 
     <!--  Icons -->
-    <li class="sidenav-item<%= current_page_path?('/icons/') ? ' active open' : '' %>">
+    <li class="sidenav-item<%= current_page_path?('/wrap/icons/') ? ' active open' : '' %>">
       <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-ios-heart"></i><div>Icons</div></a>
 
       <ul class="sidenav-menu">
@@ -305,7 +305,7 @@
     </li>
 
     <!--  Miscellaneous -->
-    <li class="sidenav-item<%= current_page_path?('/misc/') ? ' active open' : '' %>">
+    <li class="sidenav-item<%= current_page_path?('/wrap/misc/') ? ' active open' : '' %>">
       <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-ios-flask"></i><div>Miscellaneous</div></a>
 
       <ul class="sidenav-menu">
@@ -343,7 +343,7 @@
     <li class="sidenav-header small font-weight-semibold">EXTRAS</li>
 
     <!-- Pages -->
-    <li class="sidenav-item<%= current_page_path?('/pages/') ? ' active open' : '' %>">
+    <li class="sidenav-item<%= current_page_path?('/wrap/pages/') ? ' active open' : '' %>">
       <a href="javascript:void(0)" class="sidenav-link sidenav-toggle">
         <i class="sidenav-icon ion ion-md-document"></i>
         <div>Pages</div>
@@ -351,7 +351,7 @@
       </a>
       <ul class="sidenav-menu">
 
-        <li class="sidenav-item<%= current_page_path?('/pages/articles/') ? ' active open' : '' %>">
+        <li class="sidenav-item<%= current_page_path?('/wrap/pages/articles/') ? ' active open' : '' %>">
           <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Articles</div></a>
 
           <ul class="sidenav-menu">
@@ -364,7 +364,7 @@
           </ul>
         </li>
 
-        <li class="sidenav-item<%= current_page_path?('/pages/authentication/') ? ' active open' : '' %>">
+        <li class="sidenav-item<%= current_page_path?('/wrap/pages/authentication/') ? ' active open' : '' %>">
           <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Authentication</div></a>
 
           <ul class="sidenav-menu">
@@ -404,7 +404,7 @@
           </ul>
         </li>
 
-        <li class="sidenav-item<%= current_page_path?('/pages/education/') ? ' active open' : '' %>">
+        <li class="sidenav-item<%= current_page_path?('/wrap/pages/education/') ? ' active open' : '' %>">
           <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Education</div></a>
 
           <ul class="sidenav-menu">
@@ -417,7 +417,7 @@
           </ul>
         </li>
 
-        <li class="sidenav-item<%= current_page_path?('/pages/e-commerce/') ? ' active open' : '' %>">
+        <li class="sidenav-item<%= current_page_path?('/wrap/pages/e-commerce/') ? ' active open' : '' %>">
           <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>E-commerce</div></a>
 
           <ul class="sidenav-menu">
@@ -439,7 +439,7 @@
           </ul>
         </li>
 
-        <li class="sidenav-item<%= current_page_path?('/pages/forums/') ? ' active open' : '' %>">
+        <li class="sidenav-item<%= current_page_path?('/wrap/pages/forums/') ? ' active open' : '' %>">
           <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Forums</div></a>
 
           <ul class="sidenav-menu">
@@ -455,7 +455,7 @@
           </ul>
         </li>
 
-        <li class="sidenav-item<%= current_page_path?('/pages/messages-v1/') ? ' active open' : '' %>">
+        <li class="sidenav-item<%= current_page_path?('/wrap/pages/messages-v1/') ? ' active open' : '' %>">
           <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Messages v1</div></a>
 
           <ul class="sidenav-menu">
@@ -471,7 +471,7 @@
           </ul>
         </li>
 
-        <li class="sidenav-item<%= current_page_path?('/pages/messages-v2/') ? ' active open' : '' %>">
+        <li class="sidenav-item<%= current_page_path?('/wrap/pages/messages-v2/') ? ' active open' : '' %>">
           <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Messages v2</div></a>
 
           <ul class="sidenav-menu">
@@ -487,7 +487,7 @@
           </ul>
         </li>
 
-        <li class="sidenav-item<%= current_page_path?('/pages/messages-v3/') ? ' active open' : '' %>">
+        <li class="sidenav-item<%= current_page_path?('/wrap/pages/messages-v3/') ? ' active open' : '' %>">
           <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Messages v3</div></a>
 
           <ul class="sidenav-menu">
@@ -503,7 +503,7 @@
           </ul>
         </li>
 
-        <li class="sidenav-item<%= current_page_path?('/pages/projects/') ? ' active open' : '' %>">
+        <li class="sidenav-item<%= current_page_path?('/wrap/pages/projects/') ? ' active open' : '' %>">
           <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Projects</div></a>
 
           <ul class="sidenav-menu">
@@ -516,7 +516,7 @@
           </ul>
         </li>
 
-        <li class="sidenav-item<%= current_page_path?('/pages/tickets/') ? ' active open' : '' %>">
+        <li class="sidenav-item<%= current_page_path?('/wrap/pages/tickets/') ? ' active open' : '' %>">
           <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Tickets</div></a>
 
           <ul class="sidenav-menu">
@@ -529,7 +529,7 @@
           </ul>
         </li>
 
-        <li class="sidenav-item<%= current_page_path?('/pages/users/') ? ' active open' : '' %>">
+        <li class="sidenav-item<%= current_page_path?('/wrap/pages/users/') ? ' active open' : '' %>">
           <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Users</div></a>
 
           <ul class="sidenav-menu">
