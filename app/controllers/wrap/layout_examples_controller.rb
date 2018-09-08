@@ -2,7 +2,7 @@ module Wrap
   class LayoutExamplesController < ApplicationController
     def blank
       @title = 'Blank layout - Layouts'
-      render layout: 'main/layout-blank'
+      render layout: 'wrap/main/layout-blank'
     end
 
     def helpers
@@ -11,22 +11,22 @@ module Wrap
 
     def horizontal_sidenav
       @title = 'Horizontal sidenav - Layouts'
-      render layout: 'main/layout-horizontal-sidenav'
+      render layout: 'wrap/main/layout-horizontal-sidenav'
     end
 
     def layout_1_flex
       @title = 'Layout 1 (Flex) - Layouts'
-      render layout: 'main/layout-1-flex'
+      render layout: 'wrap/main/layout-1-flex'
     end
 
     def layout_1
       @title = 'Layout 1 - Layouts'
-      render layout: 'main/layout-1'
+      render layout: 'wrap/main/layout-1'
     end
 
     def layout_2_flex
       @title = 'Layout 2 (Flex) - Layouts'
-      render layout: 'main/layout-2-flex'
+      render layout: 'wrap/main/layout-2-flex'
     end
 
     def layout_2
@@ -39,17 +39,17 @@ module Wrap
 
     def without_navbar_flex
       @title = 'Without navbar (Flex) - Layouts'
-      render layout: 'main/layout-without-navbar-flex'
+      render layout: 'wrap/main/layout-without-navbar-flex'
     end
 
     def without_navbar
       @title = 'Without navbar - Layouts'
-      render layout: 'main/layout-without-navbar'
+      render layout: 'wrap/main/layout-without-navbar'
     end
 
     def without_sidenav
       @title = 'Without sidenav - Layouts'
-      render layout: 'main/layout-without-sidenav'
+      render layout: 'wrap/main/layout-without-sidenav'
     end
   end
 end

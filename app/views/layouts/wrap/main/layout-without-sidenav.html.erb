@@ -1,15 +1,13 @@
 <% content_for :content do %>
   <!-- Layout wrapper -->
-  <div class="layout-wrapper layout-2">
+  <div class="layout-wrapper layout-1 layout-without-sidenav">
     <div class="layout-inner">
 
-      <!-- Layout sidenav -->
-      <%= render "layouts/partials/layout-sidenav" %>
+      <!-- Layout navbar -->
+      <%= render "layouts/wrap/partials/layout-navbar", hide_toggle: true %>
 
       <!-- Layout container -->
       <div class="layout-container">
-        <!-- Layout navbar -->
-        <%= render "layouts/partials/layout-navbar" %>
 
         <!-- Layout content -->
         <div class="layout-content">
@@ -21,7 +19,7 @@
           <!-- / Content -->
 
           <!-- Layout footer -->
-          <%= render "layouts/partials/layout-footer" %>
+          <%= render "layouts/wrap/partials/layout-footer" %>
         </div>
         <!-- Layout content -->
 
@@ -29,10 +27,8 @@
       <!-- / Layout container -->
 
     </div>
-
-    <!-- Overlay -->
-    <div class="layout-overlay layout-sidenav-toggle"></div>
   </div>
   <!-- / Layout wrapper -->
+
 <% end %>
-<%= render template: "layouts/application" %>
+<%= render template: "layouts/wrap/application" %>
