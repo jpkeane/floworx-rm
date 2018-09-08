@@ -1,6 +1,6 @@
 module Wrap
   module Pages
-    class TicketsController < ApplicationController
+    class TicketsController < WrapController
       def edit
         @title = 'Edit ticket - Pages'
       end

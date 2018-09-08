@@ -1,5 +1,5 @@
 module Wrap
-  class IconsController < ApplicationController
+  class IconsController < WrapController
     def font_awesome
       @title = 'Font Awesome 5 - Icons'
     end

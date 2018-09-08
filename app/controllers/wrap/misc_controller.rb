@@ -1,5 +1,5 @@
 module Wrap
-  class MiscController < ApplicationController
+  class MiscController < WrapController
     def blockui
       @title = 'BlockUI - Miscellaneous'
     end

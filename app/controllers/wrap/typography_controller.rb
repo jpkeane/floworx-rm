@@ -1,5 +1,5 @@
 module Wrap
-  class TypographyController < ApplicationController
+  class TypographyController < WrapController
     def typography
       @title = 'Typography'
     end

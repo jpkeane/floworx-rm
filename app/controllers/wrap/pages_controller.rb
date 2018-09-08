@@ -1,5 +1,5 @@
 module Wrap
-  class PagesController < ApplicationController
+  class PagesController < WrapController
     def account_settings
       @title = 'Account settings - Pages'
     end

@@ -1,6 +1,6 @@
 module Wrap
   module Pages
-    class ProjectsController < ApplicationController
+    class ProjectsController < WrapController
       def item
         @title = 'Project item - Pages'
       end

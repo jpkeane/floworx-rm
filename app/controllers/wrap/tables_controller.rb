@@ -1,5 +1,5 @@
 module Wrap
-  class TablesController < ApplicationController
+  class TablesController < WrapController
     def bootstrap_sortable
       @title = 'Bootstrap Sortable - Tables'
     end

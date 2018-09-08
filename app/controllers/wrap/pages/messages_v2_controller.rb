@@ -1,6 +1,6 @@
 module Wrap
   module Pages
-    class MessagesV2Controller < ApplicationController
+    class MessagesV2Controller < WrapController
       def compose
         @title = 'Compose message v2 - Pages'
       end

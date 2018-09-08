@@ -1,5 +1,5 @@
 module Wrap
-  class UiController < ApplicationController
+  class UiController < WrapController
     def accordion
       @title = 'Accordion - UI elements'
     end

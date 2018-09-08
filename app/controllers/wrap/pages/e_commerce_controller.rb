@@ -1,6 +1,6 @@
 module Wrap
   module Pages
-    class ECommerceController < ApplicationController
+    class ECommerceController < WrapController
       def order_detail
         @title = 'Order detail - Pages'
       end

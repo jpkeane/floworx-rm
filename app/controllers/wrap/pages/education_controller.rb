@@ -1,6 +1,6 @@
 module Wrap
   module Pages
-    class EducationController < ApplicationController
+    class EducationController < WrapController
       def courses_v1
         @title = 'Courses v1 - Pages'
       end

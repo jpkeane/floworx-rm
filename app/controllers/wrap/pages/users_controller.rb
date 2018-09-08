@@ -1,6 +1,6 @@
 module Wrap
   module Pages
-    class UsersController < ApplicationController
+    class UsersController < WrapController
       def edit
         @title = 'Edit user - Pages'
       end

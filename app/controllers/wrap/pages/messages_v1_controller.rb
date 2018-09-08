@@ -1,6 +1,6 @@
 module Wrap
   module Pages
-    class MessagesV1Controller < ApplicationController
+    class MessagesV1Controller < WrapController
       def compose
         @title = 'Compose message v1 - Pages'
         render layout: 'main/layout-2-flex'

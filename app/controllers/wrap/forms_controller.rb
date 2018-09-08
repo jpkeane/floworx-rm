@@ -1,5 +1,5 @@
 module Wrap
-  class FormsController < ApplicationController
+  class FormsController < WrapController
     def controls
       @title = 'Controls - Forms'
     end

@@ -1,5 +1,5 @@
 module Wrap
-  class ChartsController < ApplicationController
+  class ChartsController < WrapController
     def c3
       @title = 'C3.js - Charts'
     end

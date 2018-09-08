@@ -1,6 +1,6 @@
 module Wrap
   module Pages
-    class ArticlesController < ApplicationController
+    class ArticlesController < WrapController
       def edit
         @title = 'Edit article - Pages'
       end

@@ -1,6 +1,6 @@
 module Wrap
   module Pages
-    class AuthenticationController < ApplicationController
+    class AuthenticationController < WrapController
       def email_confirm
         @title = 'Email confirm - Pages'
         render layout: 'main/layout-blank'

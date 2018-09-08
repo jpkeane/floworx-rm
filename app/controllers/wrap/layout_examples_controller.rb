@@ -1,5 +1,5 @@
 module Wrap
-  class LayoutExamplesController < ApplicationController
+  class LayoutExamplesController < WrapController
     def blank
       @title = 'Blank layout - Layouts'
       render layout: 'wrap/main/layout-blank'

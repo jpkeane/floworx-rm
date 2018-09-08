@@ -1,5 +1,5 @@
 module Wrap
-  class DashboardsController < ApplicationController
+  class DashboardsController < WrapController
     def dashboard_2
       @title = 'Dashboard 2 - Dashboards'
     end
