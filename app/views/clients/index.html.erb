@@ -12,7 +12,7 @@
     <tr>
       <th scope="row"><%= client.code %></th>
       <td><%= client.name %></td>
-      <td>View</td>
+      <td><%= link_to 'View', client_path(client) %></td>
       <td>Edit</td>
     </tr>
   <% end %>
