@@ -30,10 +30,30 @@
         </li>
       </ul>
       <div class="tab-content">
-        <div class="tab-pane fade show active" id="client-projects">
+
+        <!-- Tasks -->
+        <div class="tab-pane fade active show" id="project-tasks">
+
           <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Code</th>
+                <th>Project Name</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @client.projects.each do |project| %>
+                <tr>
+                  <th scope="row"><%= link_to project.full_code, project_path(project) %></th>
+                  <td><%= project.name %></td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
           </div>
         </div>
+        <!-- / Tasks -->
       </div>
     </div>
     <!-- / Tabs -->

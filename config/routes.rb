@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'dashboard#index', as: :dashboard
 
   resources :clients
+  resources :projects
 
   namespace :wrap do
     get 'charts/c3', to: 'charts#c3', as: :charts_c3

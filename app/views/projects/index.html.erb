@@ -1,0 +1,24 @@
+<h4 class="py-3 mb-4">
+  <ol class="breadcrumb font-weight-bold m-0">
+    <li class="breadcrumb-item active">All Projects</li>
+  </ol>
+</h4>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Code</th>
+    <th>Client</th>
+    <th>Project Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @projects.each do |project| %>
+    <tr>
+      <th scope="row"><%= link_to project.full_code, project_path(project) %></th>
+      <th scope="row"><%= link_to project.client.name, client_path(project.client) %></th>
+      <td><%= project.name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

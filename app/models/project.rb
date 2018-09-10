@@ -1,18 +1,20 @@
-class Client < ApplicationRecord
+class Project < ApplicationRecord
   validates :name, presence: true, length: { maximum: 100 }
   validates :code, presence: true, length: { maximum: 5 }, uniqueness: { case_sensitive: false }
 
-  has_many :projects, dependent: :nullify
-
-  before_save :uppercase_code
+  belongs_to :client
 
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
 
   def slug_candidates
     [
-      code
+      full_code
     ]
+  end
+
+  def full_code
+    client.code + '-' + code
   end
 
   def uppercase_code

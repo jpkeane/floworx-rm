@@ -11,4 +11,17 @@ namespace :seed do
                                 code: p['Code'])
     end
   end
+
+  task projects: :environment do
+    csv_path = Rails.root.join('db', 'seeds', 'projects.csv')
+    project = CSV.read(csv_path, headers: true)
+
+    project.each do |p|
+      client = Client.find_by(slug: p['Client Slug'])
+      Project.find_or_create_by!(client: client,
+                                 name: p['Name'],
+                                 code: p['Code'],
+                                 slug: p['Slug'])
+    end
+  end
 end
