@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'wrap/dashboards#dashboard_1'
 
+  get 'dashboard', to: 'dashboard#index', as: :dashboard
+
   resources :clients
 
   namespace :wrap do

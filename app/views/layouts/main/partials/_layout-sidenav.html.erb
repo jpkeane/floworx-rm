@@ -17,15 +17,22 @@
   <ul class="sidenav-inner<% if local_assigns[:horizontal] != true %> py-1<% end %>">
 
     <!-- Dashboards -->
-    <li class="sidenav-item<%= current_page?(wrap_typography_typography_path) ? ' active' : '' %>">
-      <%= link_to wrap_typography_typography_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-speedometer"></i><div>Dashboard</div><% end %>
+    <li class="sidenav-item<%= current_page?(dashboard_path) ? ' active' : '' %>">
+      <%= link_to dashboard_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-speedometer"></i><div>Dashboard</div><% end %>
     </li>
-    <!-- Layouts -->
+
     <li class="sidenav-divider mb-1"></li>
     <li class="sidenav-header small font-weight-semibold">MODULES</li>
 
     <li class="sidenav-item<%= current_page?(clients_path) ? ' active' : '' %>">
       <%= link_to clients_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-radio"></i><div>Clients</div><% end %>
+    </li>
+
+    <li class="sidenav-divider mb-1"></li>
+    <li class="sidenav-header small font-weight-semibold">UI KITS</li>
+
+    <li class="sidenav-item<%= current_page?(wrap_dashboards_dashboard_1_path) ? ' active' : '' %>">
+      <%= link_to wrap_dashboards_dashboard_1_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-laptop"></i><div>UI Wrap</div><% end %>
     </li>
   </ul>
 </div>
