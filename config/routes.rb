@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root to: 'wrap/dashboards#dashboard_1'
+
+  resources :clients
+
   namespace :wrap do
     get 'charts/c3', to: 'charts#c3', as: :charts_c3
     get 'charts/chartist', to: 'charts#chartist', as: :charts_chartist
@@ -143,5 +147,4 @@ Rails.application.routes.draw do
     get 'ui/tour', to: 'ui#tour', as: :ui_tour
     get 'ui/treeview', to: 'ui#treeview', as: :ui_treeview
   end
-  root to: 'wrap/dashboards#dashboard_1'
 end
