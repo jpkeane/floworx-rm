@@ -1,3 +1,5 @@
 Name,Code,Slug,Client Slug
-RESET Poland,RSTPL,rstpl,bp
-RESET Netherlands,RSTNL,rstnl,bp
+RESET Poland,RSTPL,bp-rstpl,bp
+RESET Netherlands,RSTNL,bp-rstnl,bp
+Enactor Discovery,ENDIS,mc-endis,mc
+Enactor Consulting,ENCON,hn-encon,hn
