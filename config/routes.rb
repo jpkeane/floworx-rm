@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'wrap/dashboards#dashboard_1'
+  root to: 'front_pages#home'
 
   get 'dashboard', to: 'dashboard#index', as: :dashboard
 
