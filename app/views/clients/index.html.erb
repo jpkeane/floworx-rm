@@ -1,19 +1,21 @@
+<h4 class="py-3 mb-4">
+  <ol class="breadcrumb font-weight-bold m-0">
+    <li class="breadcrumb-item active">All Clients</li>
+  </ol>
+</h4>
+
 <table class="table table-striped">
   <thead>
   <tr>
     <th>Code</th>
     <th>Client Name</th>
-    <th>View</th>
-    <th>Edit</th>
   </tr>
   </thead>
   <tbody>
   <% @clients.each do |client| %>
     <tr>
-      <th scope="row"><%= client.code %></th>
+      <th scope="row"><%= link_to client.code, client_path(client) %></th>
       <td><%= client.name %></td>
-      <td><%= link_to 'View', client_path(client) %></td>
-      <td>Edit</td>
     </tr>
   <% end %>
   </tbody>
