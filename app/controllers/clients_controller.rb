@@ -11,6 +11,20 @@ class ClientsController < ApplicationController
     @client = Client.new
   end
 
+  def edit
+    @client = Client.friendly.find(params[:id])
+  end
+
+  def update
+    @client = Client.friendly.find(params[:id])
+    if @client.update(client_params)
+      flash[:success] = 'Client Updated'
+      redirect_to @client
+    else
+      render 'edit'
+    end
+  end
+
   def create
     @client = Client.new(client_params)
     if @client.save
