@@ -1,4 +1,4 @@
-<% provide(:title, @project.name) %>
+<% provide(:title, "#{@project.client.name} - #{@project.name}") %>
 <% content_for :styles do %>
   <!-- Page -->
   <%= stylesheet_link_tag 'pages/projects.css', media: 'all' %>
@@ -14,11 +14,18 @@
 **************************** CONTENT ****************************
 -->
 
-<h4 class="py-3 mb-4">
-  <ol class="breadcrumb font-weight-bold m-0">
-    <li class="breadcrumb-item"><%= link_to 'All Projects', projects_path %></li>
-    <li class="breadcrumb-item active"><small><%= @project.name %></small></li>
-  </ol>
+<h4 class="d-flex flex-wrap justify-content-between align-items-center font-weight-bold pt-2 mb-4">
+  <div class="mb-2">
+    <ol class="breadcrumb font-weight-bold m-0">
+      <li class="breadcrumb-item"><%= link_to 'Projects', projects_path %></li>
+      <li class="breadcrumb-item active"><small><%= "#{@project.client.name} - #{@project.name}" %></small></li>
+    </ol>
+  </div>
+  <div class="mb-2" style="max-width: 200px;">
+    <%= link_to edit_project_path(@project), class: "btn btn-primary" do %>
+      <span class="ion ion-md-arrow-round-forward"></span>&nbsp;&nbsp;Edit Project
+    <% end %>
+  </div>
 </h4>
 
 <div class="row">

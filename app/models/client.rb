@@ -18,4 +18,8 @@ class Client < ApplicationRecord
   def uppercase_code
     code.upcase!
   end
+
+  def code_and_name_display
+    "#{code} - #{name}"
+  end
 end

@@ -1,0 +1,52 @@
+<% provide(:title, 'New Project') %>
+<h4 class="d-flex flex-wrap justify-content-between align-items-center font-weight-bold pt-2 mb-4">
+  <ol class="breadcrumb font-weight-bold m-0">
+    <li class="breadcrumb-item"><%= link_to 'Projects', projects_path %></li>
+    <li class="breadcrumb-item active"><small>New Project</small></li>
+  </ol>
+</h4>
+
+<%= form_for @project do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="card mb-4">
+    <h6 class="card-header">
+      Basic Information
+    </h6>
+    <div class="card-body">
+      <div class="form-group row">
+        <%= f.label :name, class: 'col-form-label col-sm-2 text-sm-right' %>
+        <div class="col-sm-10">
+          <%= f.text_field :name, class: 'form-control', placeholder: 'Name'  %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label :code, class: 'col-form-label col-sm-2 text-sm-right' %>
+        <div class="col-sm-10">
+          <%= f.text_field :code, class: 'form-control', placeholder: 'Code'  %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <h6 class="card-header">
+      Client
+    </h6>
+    <div class="card-body">
+      <div class="form-group row">
+        <%= f.label :client_id, class: 'col-form-label col-sm-2 text-sm-right' %>
+        <div class="col-sm-10">
+          <%= f.collection_select :client_id, Client.order(:code), :id, :code_and_name_display, { include_blank: false }, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-10 ml-sm-auto">
+      <%= f.submit class: 'btn btn-primary' %>
+      <%= link_to 'Cancel', projects_path, class: 'btn btn-secondary' %>
+
+    </div>
+  </div>
+<% end %>

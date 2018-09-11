@@ -18,7 +18,7 @@ class ClientsController < ApplicationController
   def update
     @client = Client.friendly.find(params[:id])
     if @client.update(client_params)
-      flash[:success] = 'Client Updated'
+      flash[:success] = 'Client updated'
       redirect_to @client
     else
       render 'edit'
