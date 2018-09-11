@@ -30,9 +30,5 @@ module FloworxRm
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-
-    config.action_view.field_error_proc = proc { |html_tag, _instance|
-      html_tag
-    }
   end
 end
