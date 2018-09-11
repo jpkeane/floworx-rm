@@ -1,3 +1,7 @@
+div.field_with_errors {
+    display: inline !important;
+}
+
 .default-style .sidenav .app-brand.demo {
   height: 66px;
 }

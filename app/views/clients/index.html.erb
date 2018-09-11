@@ -1,10 +1,17 @@
 <% provide(:title, 'All Clients') %>
-<h4 class="py-3 mb-4">
-  <ol class="breadcrumb font-weight-bold m-0">
-    <li class="breadcrumb-item active">All Clients</li>
-  </ol>
+<h4 class="d-flex flex-wrap justify-content-between align-items-center font-weight-bold pt-2 mb-4">
+  <div class="mb-2">
+    <ol class="breadcrumb font-weight-bold m-0">
+      <li class="breadcrumb-item"><%= link_to 'Clients', clients_path %></li>
+      <li class="breadcrumb-item active"><small>All Clients</small></li>
+    </ol>
+  </div>
+  <div class="mb-2" style="max-width: 200px;">
+    <%= link_to new_client_path, class: "btn btn-primary" do %>
+      <span class="ion ion-md-add-circle"></span>&nbsp;&nbsp;New Client
+    <% end %>
+  </div>
 </h4>
-
 <table class="table table-striped">
   <thead>
   <tr>

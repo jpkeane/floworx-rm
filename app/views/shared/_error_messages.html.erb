@@ -1,0 +1,19 @@
+<% if object.errors.any? %>
+<div class="card mb-4">
+  <h6 class="card-header">
+    Form Errors
+  </h6>
+  <div class="card-body">
+      <div id="error_explanation">
+        <div class="alert alert-danger">
+          The form contains <%= pluralize(object.errors.count, "error") %>.
+        </div>
+        <ul>
+          <% object.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+  </div>
+</div>
+<% end %>

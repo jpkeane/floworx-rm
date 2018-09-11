@@ -45,17 +45,16 @@
 <body>
   <div class="page-loader"><div class="bg-primary"></div></div>
 
+
   <%= content_for?(:content) ? yield(:content) : yield %>
 
   <!-- Core scripts -->
   <%= javascript_include_tag 'popper/popper.js' %>
   <%= javascript_include_tag 'bootstrap.js' %>
   <%= javascript_include_tag 'sidenav.js' %>
-
   <!-- Scripts -->
   <%= javascript_include_tag 'perfect-scrollbar/perfect-scrollbar.js' %>
   <%= javascript_include_tag 'demo.js' %>
-
   <%= yield :scripts %>
 </body>
 </html>
