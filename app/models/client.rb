@@ -15,6 +15,10 @@ class Client < ApplicationRecord
     ]
   end
 
+  def self.active
+    self.count
+  end
+
   def uppercase_code
     code.upcase!
   end

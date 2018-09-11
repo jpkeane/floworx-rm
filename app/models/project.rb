@@ -13,6 +13,10 @@ class Project < ApplicationRecord
     ]
   end
 
+  def self.active
+    self.count
+  end
+
   def full_code
     client.code + '-' + code
   end
