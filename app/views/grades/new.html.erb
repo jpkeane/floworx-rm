@@ -1,0 +1,38 @@
+<% provide(:title, 'New Grade') %>
+<h4 class="d-flex flex-wrap justify-content-between align-items-center font-weight-bold pt-2 mb-4">
+  <ol class="breadcrumb font-weight-bold m-0">
+    <li class="breadcrumb-item"><%= link_to 'Grades', grades_path %></li>
+    <li class="breadcrumb-item active"><small>New Grade</small></li>
+  </ol>
+</h4>
+
+<%= form_for @grade do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="card mb-4">
+    <h6 class="card-header">
+      Basic Information
+    </h6>
+    <div class="card-body">
+        <div class="form-group row">
+          <%= f.label :name, class: 'col-form-label col-sm-2 text-sm-right' %>
+          <div class="col-sm-10">
+            <%= f.text_field :name, class: 'form-control', placeholder: 'Name'  %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label :level, class: 'col-form-label col-sm-2 text-sm-right' %>
+          <div class="col-sm-10">
+            <%= f.text_field :level, class: 'form-control', placeholder: 'Level'  %>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <div class="col-sm-10 ml-sm-auto">
+      <%= f.submit class: 'btn btn-primary' %>
+      <%= link_to 'Cancel', grades_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+<% end %>

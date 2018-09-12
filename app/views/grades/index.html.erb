@@ -1,0 +1,30 @@
+<% provide(:title, 'All Grades') %>
+<h4 class="d-flex flex-wrap justify-content-between align-items-center font-weight-bold pt-2 mb-4">
+  <div class="mb-2">
+    <ol class="breadcrumb font-weight-bold m-0">
+      <li class="breadcrumb-item"><%= link_to 'Grades', clients_path %></li>
+      <li class="breadcrumb-item active"><small>All Grades</small></li>
+    </ol>
+  </div>
+  <div class="mb-2" style="max-width: 200px;">
+    <%= link_to new_grade_path, class: "btn btn-primary" do %>
+      <span class="ion ion-md-add-circle"></span>&nbsp;&nbsp;New Grade
+    <% end %>
+  </div>
+</h4>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Grade</th>
+    <th>Level</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @grades.each do |grade| %>
+    <tr>
+      <th scope="row"><%= link_to grade.name, grade_path(grade) %></th>
+      <td><%= grade.level %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
