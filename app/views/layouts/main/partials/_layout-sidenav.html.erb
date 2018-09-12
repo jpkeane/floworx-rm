@@ -36,6 +36,10 @@
       <%= link_to grades_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-star"></i><div>Grades</div><% end %>
     </li>
 
+    <li class="sidenav-item<%= current_page?(roles_path) ? ' active' : '' %>">
+      <%= link_to roles_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-cube"></i><div>Roles</div><% end %>
+    </li>
+
     <li class="sidenav-divider mb-1"></li>
     <li class="sidenav-header small font-weight-semibold">UI KITS</li>
 
