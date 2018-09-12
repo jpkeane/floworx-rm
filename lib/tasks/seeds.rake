@@ -24,4 +24,15 @@ namespace :seed do
                                  slug: p['Slug'])
     end
   end
+
+  task grades: :environment do
+    csv_path = Rails.root.join('db', 'seeds', 'grades.csv')
+    grades = CSV.read(csv_path, headers: true)
+
+    grades.each do |p|
+      Grade.find_or_create_by!(name: p['Name'],
+                               slug: p['Slug'],
+                               level: p['Level'])
+    end
+  end
 end
