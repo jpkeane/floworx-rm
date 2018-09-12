@@ -24,8 +24,12 @@
     <li class="sidenav-divider mb-1"></li>
     <li class="sidenav-header small font-weight-semibold">MODULES</li>
 
+    <li class="sidenav-item<%= current_page?(staff_resources_path) ? ' active' : '' %>">
+      <%= link_to staff_resources_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-contacts"></i><div>Staff</div><% end %>
+    </li>
+
     <li class="sidenav-item<%= current_page?(clients_path) ? ' active' : '' %>">
-      <%= link_to clients_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-contacts"></i><div>Clients</div><% end %>
+      <%= link_to clients_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-business"></i><div>Clients</div><% end %>
     </li>
 
     <li class="sidenav-item<%= current_page?(projects_path) ? ' active' : '' %>">

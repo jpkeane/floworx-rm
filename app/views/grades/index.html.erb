@@ -17,13 +17,15 @@
   <tr>
     <th>Grade</th>
     <th>Level</th>
+    <th>Staff</th>
   </tr>
   </thead>
   <tbody>
   <% @grades.each do |grade| %>
     <tr>
-      <th scope="row"><%= grade.name %></th>
+      <th scope="row"><%= link_to grade.name, grade_path(grade) %></th>
       <td><%= grade.level %></td>
+      <td><%= grade.staff_resources.count %></td>
     </tr>
   <% end %>
   </tbody>

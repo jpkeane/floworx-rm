@@ -1,0 +1,38 @@
+<% provide(:title, 'All Staff Resources') %>
+<h4 class="d-flex flex-wrap justify-content-between align-items-center font-weight-bold pt-2 mb-4">
+  <div class="mb-2">
+    <ol class="breadcrumb font-weight-bold m-0">
+      <li class="breadcrumb-item"><%= link_to 'Staff Resources', staff_resources_path %></li>
+      <li class="breadcrumb-item active"><small>All Staff Resources</small></li>
+    </ol>
+  </div>
+  <div class="mb-2" style="max-width: 200px;">
+    <%= link_to new_staff_resource_path, class: "btn btn-primary" do %>
+      <span class="ion ion-md-add-circle"></span>&nbsp;&nbsp;New Staff
+    <% end %>
+  </div>
+</h4>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th></th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Grade</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @staff_resources.each do |sr| %>
+    <tr>
+      <th scope="row">
+        <%= link_to staff_resource_path(sr) do %>
+          <i class="ion ion-md-eye d-block"></i>
+        <% end %>
+      </th>
+      <th scope="row"><%= sr.first_name %></th>
+      <th scope="row"><%= sr.last_name %></th>
+      <th scope="row"><%= sr.grade.name %></th>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
