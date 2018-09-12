@@ -1,0 +1,28 @@
+<% provide(:title, 'All Skills') %>
+<h4 class="d-flex flex-wrap justify-content-between align-items-center font-weight-bold pt-2 mb-4">
+  <div class="mb-2">
+    <ol class="breadcrumb font-weight-bold m-0">
+      <li class="breadcrumb-item"><%= link_to 'Skills', skills_path %></li>
+      <li class="breadcrumb-item active"><small>All Skills</small></li>
+    </ol>
+  </div>
+  <div class="mb-2" style="max-width: 200px;">
+    <%= link_to new_skill_path, class: "btn btn-primary" do %>
+      <span class="ion ion-md-add-circle"></span>&nbsp;&nbsp;New Skill
+    <% end %>
+  </div>
+</h4>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Skill</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @skills.each do |skill| %>
+    <tr>
+      <th scope="row"><%= link_to skill.name, skill_path(skill) %></th>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

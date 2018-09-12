@@ -45,4 +45,14 @@ namespace :seed do
                               slug: p['Slug'])
     end
   end
+
+  task skills: :environment do
+    csv_path = Rails.root.join('db', 'seeds', 'skills.csv')
+    skills = CSV.read(csv_path, headers: true)
+
+    skills.each do |p|
+      Skill.find_or_create_by!(name: p['Name'],
+                               slug: p['Slug'])
+    end
+  end
 end

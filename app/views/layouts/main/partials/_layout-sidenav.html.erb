@@ -33,11 +33,15 @@
     </li>
 
     <li class="sidenav-item<%= current_page?(grades_path) ? ' active' : '' %>">
-      <%= link_to grades_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-star"></i><div>Grades</div><% end %>
+      <%= link_to grades_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-funnel"></i><div>Grades</div><% end %>
     </li>
 
     <li class="sidenav-item<%= current_page?(roles_path) ? ' active' : '' %>">
       <%= link_to roles_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-cube"></i><div>Roles</div><% end %>
+    </li>
+
+    <li class="sidenav-item<%= current_page?(skills_path) ? ' active' : '' %>">
+      <%= link_to skills_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-star"></i><div>Skills</div><% end %>
     </li>
 
     <li class="sidenav-divider mb-1"></li>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :projects
   resources :grades
   resources :roles
+  resources :skills
 
   namespace :wrap do
     get 'charts/c3', to: 'charts#c3', as: :charts_c3
