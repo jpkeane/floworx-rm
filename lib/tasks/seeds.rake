@@ -55,4 +55,19 @@ namespace :seed do
                                slug: p['Slug'])
     end
   end
+
+  task staff_resources: :environment do
+    csv_path = Rails.root.join('db', 'seeds', 'staff_resources.csv')
+    staff_resources = CSV.read(csv_path, headers: true)
+
+    staff_resources.each do |p|
+      grade = Grade.find_by(slug: p['Grade Slug'])
+      StaffResource.find_or_create_by!(grade: grade,
+                                       first_name: p['First Name'],
+                                       last_name: p['Last Name'],
+                                       display_name: p['Display Name'],
+                                       slug: p['Slug'],
+                                       email_address: p['Email Address'])
+    end
+  end
 end
