@@ -1,5 +1,6 @@
 class StaffResource < ApplicationRecord
   belongs_to :grade, optional: true
+  has_many :staff_resource_skills, dependent: :destroy
 
   validates :first_name, presence: true, length: { maximum: 255 }
   validates :last_name, presence: true, length: { maximum: 255 }
