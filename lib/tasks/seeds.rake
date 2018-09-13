@@ -70,4 +70,18 @@ namespace :seed do
                                        email_address: p['Email Address'])
     end
   end
+
+  task staff_resource_skills: :environment do
+    csv_path = Rails.root.join('db', 'seeds', 'staff_resource_skills.csv')
+    staff_resource_skills = CSV.read(csv_path, headers: true)
+
+    staff_resource_skills.each do |p|
+      staff_resource = StaffResource.find_by(slug: p['Staff Slug'])
+      skill = Skill.find_by(slug: p['Skill Slug'])
+
+      StaffResourceSkill.find_or_create_by!(staff_resource: staff_resource,
+                                            skill: skill,
+                                            level: p['Level'])
+    end
+  end
 end
