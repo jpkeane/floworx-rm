@@ -1,4 +1,6 @@
 class Role < ApplicationRecord
+  has_many :staff_resource_roles, dependent: :destroy
+
   validates :name, presence: true, length: { maximum: 100 }
 
   extend FriendlyId

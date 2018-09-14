@@ -28,14 +28,6 @@
       <%= link_to staff_resources_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-contacts"></i><div>Staff</div><% end %>
     </li>
 
-    <li class="sidenav-item<%= current_page?(clients_path) ? ' active' : '' %>">
-      <%= link_to clients_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-business"></i><div>Clients</div><% end %>
-    </li>
-
-    <li class="sidenav-item<%= current_page?(projects_path) ? ' active' : '' %>">
-      <%= link_to projects_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-list-box"></i><div>Projects</div><% end %>
-    </li>
-
     <li class="sidenav-item<%= current_page?(grades_path) ? ' active' : '' %>">
       <%= link_to grades_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-funnel"></i><div>Grades</div><% end %>
     </li>
@@ -46,6 +38,14 @@
 
     <li class="sidenav-item<%= current_page?(skills_path) ? ' active' : '' %>">
       <%= link_to skills_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-star"></i><div>Skills</div><% end %>
+    </li>
+
+    <li class="sidenav-item<%= current_page?(clients_path) ? ' active' : '' %>">
+      <%= link_to clients_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-business"></i><div>Clients</div><% end %>
+    </li>
+
+    <li class="sidenav-item<%= current_page?(projects_path) ? ' active' : '' %>">
+      <%= link_to projects_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-list-box"></i><div>Projects</div><% end %>
     </li>
 
     <li class="sidenav-divider mb-1"></li>
