@@ -31,7 +31,41 @@
 
 <div class="row">
   <div class="col">
+    <!-- Tabs -->
+    <div class="nav-tabs-top mb-4">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#staff-roles">Staff Resources</a>
+        </li>
+      </ul>
+      <div class="tab-content">
 
+        <!-- Tasks -->
+        <div class="tab-pane fade active show" id="staff-roles">
+
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>Level</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @role.staff_resource_roles.each do |srr| %>
+                <tr>
+                  <th scope="row"><%= link_to srr.staff_resource.full_name, staff_resource_path(srr.staff_resource) %></th>
+                  <td><%= srr.level %></td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- / Tasks -->
+      </div>
+    </div>
+    <!-- / Tabs -->
   </div>
 
   <div class="col-md-4 col-xl-3">

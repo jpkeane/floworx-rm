@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_13_120253) do
+ActiveRecord::Schema.define(version: 2018_09_14_223624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,16 @@ ActiveRecord::Schema.define(version: 2018_09_13_120253) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "staff_resource_roles", force: :cascade do |t|
+    t.bigint "staff_resource_id"
+    t.bigint "role_id"
+    t.integer "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["role_id"], name: "index_staff_resource_roles_on_role_id"
+    t.index ["staff_resource_id"], name: "index_staff_resource_roles_on_staff_resource_id"
+  end
+
   create_table "staff_resource_skills", force: :cascade do |t|
     t.bigint "staff_resource_id"
     t.bigint "skill_id"
@@ -82,6 +92,8 @@ ActiveRecord::Schema.define(version: 2018_09_13_120253) do
   end
 
   add_foreign_key "projects", "clients"
+  add_foreign_key "staff_resource_roles", "roles"
+  add_foreign_key "staff_resource_roles", "staff_resources"
   add_foreign_key "staff_resource_skills", "skills"
   add_foreign_key "staff_resource_skills", "staff_resources"
   add_foreign_key "staff_resources", "grades"

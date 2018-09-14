@@ -84,4 +84,18 @@ namespace :seed do
                                             level: p['Level'])
     end
   end
+
+  task staff_resource_roles: :environment do
+    csv_path = Rails.root.join('db', 'seeds', 'staff_resource_roles.csv')
+    staff_resource_roles = CSV.read(csv_path, headers: true)
+
+    staff_resource_roles.each do |p|
+      staff_resource = StaffResource.find_by(slug: p['Staff Slug'])
+      role = Role.find_by(slug: p['Role Slug'])
+
+      StaffResourceRole.find_or_create_by!(staff_resource: staff_resource,
+                                           role: role,
+                                           level: p['Level'])
+    end
+  end
 end

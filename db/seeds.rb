@@ -1,4 +1,5 @@
 StaffResourceSkill.destroy_all
+StaffResourceRole.destroy_all
 StaffResource.destroy_all
 Project.destroy_all
 Client.destroy_all
@@ -13,3 +14,4 @@ Rake::Task['seed:clients'].invoke
 Rake::Task['seed:projects'].invoke
 Rake::Task['seed:staff_resources'].invoke
 Rake::Task['seed:staff_resource_skills'].invoke
+Rake::Task['seed:staff_resource_roles'].invoke
