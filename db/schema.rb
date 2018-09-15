@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_15_002026) do
+ActiveRecord::Schema.define(version: 2018_09_15_030229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,14 @@ ActiveRecord::Schema.define(version: 2018_09_15_002026) do
     t.index ["grade_id"], name: "index_staff_resources_on_grade_id"
   end
 
+  create_table "user_remember_tokens", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "remember_digest", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_remember_tokens_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email_address"
     t.string "first_name", null: false
@@ -107,4 +115,5 @@ ActiveRecord::Schema.define(version: 2018_09_15_002026) do
   add_foreign_key "staff_resource_skills", "skills"
   add_foreign_key "staff_resource_skills", "staff_resources"
   add_foreign_key "staff_resources", "grades"
+  add_foreign_key "user_remember_tokens", "users"
 end
