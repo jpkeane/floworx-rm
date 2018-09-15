@@ -25,6 +25,19 @@
   <div class="navbar-collapse collapse" id="layout-navbar-collapse">
     <!-- Divider -->
     <hr class="d-lg-none w-100 my-2">
+
+    <div class="navbar-nav align-items-lg-center ml-auto">
+      <!-- Divider -->
+      <div class="nav-item d-none d-lg-block text-big font-weight-light line-height-1 opacity-25 mr-3 ml-1">|</div>
+
+      <div class="demo-navbar-user nav-item dropdown">
+        <% if logged_in? %>
+          LOGGED IN! - <%= link_to 'Log out', logout_path, method: :delete %>
+      <% else %>
+          WHO ARE YOU?
+        <% end %>
+      </div>
+    </div>
   </div>
 </nav>
 <!-- / Layout navbar -->

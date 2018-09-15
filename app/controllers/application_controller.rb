@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include SessionsHelper
+
   # Default layout
   layout 'main/layout-2'
 

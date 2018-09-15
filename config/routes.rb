@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   root to: 'front_pages#home'
 
   get 'dashboard', to: 'dashboard#index', as: :dashboard
+
+  get    'login',   to: 'sessions#new'
+  post   'login',   to: 'sessions#create'
+  delete 'logout',  to: 'sessions#destroy'
 
   resources :clients
   resources :projects
