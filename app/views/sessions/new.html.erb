@@ -51,7 +51,12 @@
             </div>
 
             <div class="form-group">
-              <%= f.label :password, class: 'form-label' %>
+              <%= f.label :password, class: 'form-label d-flex justify-content-between align-items-end' do %>
+                <div>
+                  Password
+                </div>
+                <%= link_to 'Forgotten password?', password_reset_path %>
+              <% end %>
               <%= f.password_field :password, class: 'form-control' %>
             </div>
 
