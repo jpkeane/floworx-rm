@@ -23,6 +23,8 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
 
+  private
+
   def successful_sign_in(user)
     log_in user
     remember(user) if params[:session][:remember_me] == '1'
