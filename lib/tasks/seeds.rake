@@ -71,6 +71,18 @@ namespace :seed do
     end
   end
 
+  task users: :environment do
+    csv_path = Rails.root.join('db', 'seeds', 'users.csv')
+    users = CSV.read(csv_path, headers: true)
+
+    users.each do |p|
+      User.create!(first_name: p['First Name'],
+                   last_name: p['Last Name'],
+                   email_address: p['Email Address'],
+                   password: p['Password'])
+    end
+  end
+
   task staff_resource_skills: :environment do
     csv_path = Rails.root.join('db', 'seeds', 'staff_resource_skills.csv')
     staff_resource_skills = CSV.read(csv_path, headers: true)

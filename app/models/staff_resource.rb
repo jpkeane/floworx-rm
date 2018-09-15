@@ -3,8 +3,8 @@ class StaffResource < ApplicationRecord
   has_many :staff_resource_skills, dependent: :destroy
   has_many :staff_resource_roles, dependent: :destroy
 
-  validates :first_name, presence: true, length: { maximum: 255 }
-  validates :last_name, presence: true, length: { maximum: 255 }
+  validates :first_name, presence: true, length: { maximum: 150 }
+  validates :last_name, presence: true, length: { maximum: 150 }
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email_address, presence: true, length: { maximum: 255 },
