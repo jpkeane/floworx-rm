@@ -4,7 +4,7 @@ class User < ApplicationRecord
   before_save { self.email_address = email_address.downcase }
 
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 8 }, allow_nil: true
 
   validates :first_name, presence: true, length: { maximum: 150 }
   validates :last_name, presence: true, length: { maximum: 150 }
@@ -19,6 +19,10 @@ class User < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
   end
 
   def remember
@@ -38,5 +42,10 @@ class User < ApplicationRecord
 
   def forget_all_remember_tokens
     UserRememberToken.where(user: self).destroy_all
+  end
+
+  def create_password_reset_token
+    # update_attributes(password_reset_token: SecureRandom.urlsafe_base64, password_reset_token_at: Time.zone.now)
+    update(password_reset_token: SecureRandom.urlsafe_base64, password_reset_token_at: Time.zone.now)
   end
 end

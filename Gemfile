@@ -9,9 +9,13 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Data Store
 gem 'pg', '>= 0.18', '< 2.0'
+gem 'redis', '~> 3.0'
 
 # App Server
 gem 'puma', '~> 3.11'
+
+# Job workers
+gem 'sidekiq'
 
 # View
 gem 'coffee-rails', '~> 4.2'
@@ -36,6 +40,8 @@ group :development do
   gem 'brakeman'
   gem 'reek'
   gem 'rubocop'
+
+  gem 'letter_opener'
 end
 
 group :development, :test do

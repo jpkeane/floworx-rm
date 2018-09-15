@@ -1,4 +1,4 @@
-<% provide(:title, 'Login') %>
+<% provide(:title, 'Forgot Password') %>
 
 <% content_for :styles do %>
   <!-- Page -->
@@ -20,10 +20,12 @@
 
       <!-- Text -->
       <div class="w-100 text-white px-5">
-        <h1 class="display-2 font-weight-bolder mb-4">Floworx</h1>
+        <h1 class="display-2 font-weight-bolder mb-4">Floworx Password Reset</h1>
+
         <div class="text-large font-weight-light">
-          Login to your Floworx account to access your dashboard and reports
+          Enter your Email Address in the form to request a new password
         </div>
+
       </div>
       <!-- /.Text -->
     </div>
@@ -36,33 +38,24 @@
       <div class="d-flex col-sm-7 col-md-5 col-lg-12 px-0 px-xl-4 mx-auto">
         <div class="w-100">
 
-          <h4 class="text-center text-lighter font-weight-normal mt-5 mb-0">Login to Floworx</h4>
-
           <div class="login-flash">
             <% flash.each do |message_type, message| %>
               <div class="alert alert-<%= message_type %> alert-dismissible fade show"><%= message %></div>
             <% end %>
           </div>
 
-          <%= form_for(:session, url: login_path, html: { class: 'my-5' }) do |f| %>
+          <h4 class="text-center text-lighter font-weight-normal mt-5 mb-0">Reset Password</h4>
+
+          <%= form_for(:password_reset, url: password_reset_path, html: { class: 'my-5' }) do |f| %>
             <div class="form-group">
-              <%= f.label :email_address, class: 'form-label' %>
-              <%= f.email_field :email_address, class: 'form-control' %>
+              <%= f.label :email_address, 'Email Address', class:'form-label' %>
+              <%= f.text_field :email_address, class: 'form-control' %>
             </div>
 
-            <div class="form-group">
-              <%= f.label :password, class: 'form-label' %>
-              <%= f.password_field :password, class: 'form-control' %>
-            </div>
 
-            <div class="d-flex justify-content-between align-items-center m-0">
-              <%= f.label :remember_me, class: 'custom-control custom-checkbox m-0' do %>
-                <%= f.check_box :remember_me, class: 'custom-control-input' %>
-                <span class="custom-control-label">Remember me</span>
-              <% end %>
-              <%= f.submit 'Log in', class: 'btn btn-primary' %>
-            </div>
+            <%= f.submit 'Request Password Reset', class: 'btn btn-primary btn-block' %>
           <% end %>
+
         </div>
       </div>
     </div>
