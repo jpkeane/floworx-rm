@@ -25,6 +25,23 @@ namespace :seed do
     end
   end
 
+  task engagements: :environment do
+    csv_path = Rails.root.join('db', 'seeds', 'engagements.csv')
+    engagement = CSV.read(csv_path, headers: true)
+
+    engagement.each do |p|
+      project = Project.find_by(slug: p['Project Slug'])
+      role = Role.find_by(slug: p['Role Slug'])
+      Engagement.find_or_create_by!(project: project,
+                                    role: role,
+                                    code: p['Code'],
+                                    slug: p['Slug'],
+                                    name: p['Name'],
+                                    start_date: p['Start Date'],
+                                    end_date: p['End Date'])
+    end
+  end
+
   task grades: :environment do
     csv_path = Rails.root.join('db', 'seeds', 'grades.csv')
     grades = CSV.read(csv_path, headers: true)

@@ -2,6 +2,7 @@ StaffResourceSkill.destroy_all
 StaffResourceRole.destroy_all
 StaffResource.destroy_all
 User.destroy_all
+Engagement.destroy_all
 Project.destroy_all
 Client.destroy_all
 Grade.destroy_all
@@ -13,6 +14,7 @@ Rake::Task['seed:roles'].invoke
 Rake::Task['seed:grades'].invoke
 Rake::Task['seed:clients'].invoke
 Rake::Task['seed:projects'].invoke
+Rake::Task['seed:engagements'].invoke
 Rake::Task['seed:users'].invoke
 Rake::Task['seed:staff_resources'].invoke
 Rake::Task['seed:staff_resource_skills'].invoke
