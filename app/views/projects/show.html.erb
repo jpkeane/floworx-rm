@@ -30,6 +30,43 @@
 
 <div class="row">
   <div class="col">
+    <!-- Tabs -->
+    <div class="nav-tabs-top mb-4">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#project-engagements">Engagements</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+
+        <!-- Tasks -->
+        <div class="tab-pane fade active show" id="project-engagements">
+
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Code</th>
+                <th>Project Name</th>
+                <th>Role</th>
+              </tr>
+              </thead>
+              <tbody>
+                <% @project.engagements.each do |engagement| %>
+                <tr>
+                  <th scope="row"><%= engagement.code %></th>
+                  <td><%= engagement.name %></td>
+                  <td><%= link_to engagement.role.name, engagement.role %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- / Tasks -->
+      </div>
+    </div>
+    <!-- / Tabs -->
   </div>
   <div class="col-md-4 col-xl-3">
     <!-- Project details -->
