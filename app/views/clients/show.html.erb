@@ -37,11 +37,14 @@
         <li class="nav-item">
           <a class="nav-link active" data-toggle="tab" href="#client-projects">Projects</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#client-engagements">Engagements</a>
+        </li>
       </ul>
       <div class="tab-content">
 
         <!-- Tasks -->
-        <div class="tab-pane fade active show" id="project-tasks">
+        <div class="tab-pane fade active show" id="client-projects">
 
           <div class="card-body">
             <table class="table table-striped">
@@ -56,6 +59,31 @@
                 <tr>
                   <th scope="row"><%= link_to project.full_code, project_path(project) %></th>
                   <td><%= project.name %></td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="client-engagements">
+
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Code</th>
+                <th>Project Name</th>
+                <th>Role</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @client.engagements.each do |engagement| %>
+                <tr>
+                  <th scope="row"><%= engagement.code %></th>
+                  <td><%= engagement.name %></td>
+                  <td><%= link_to engagement.role.name, engagement.role %></td>
+                  <td><%= engagement.start_date.strftime("%d/%m/%Y") %></td>
+                  <td><%= engagement.end_date.strftime("%d/%m/%Y") %></td>
                 </tr>
               <% end %>
               </tbody>

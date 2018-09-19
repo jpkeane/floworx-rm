@@ -57,6 +57,8 @@
                   <th scope="row"><%= engagement.code %></th>
                   <td><%= engagement.name %></td>
                   <td><%= link_to engagement.role.name, engagement.role %></td>
+                  <td><%= engagement.start_date.strftime("%d/%m/%Y") %></td>
+                  <td><%= engagement.end_date.strftime("%d/%m/%Y") %></td>
                 </tr>
                 <% end %>
               </tbody>

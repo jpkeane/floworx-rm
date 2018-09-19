@@ -3,6 +3,7 @@ class Client < ApplicationRecord
   validates :code, presence: true, length: { maximum: 5 }, uniqueness: { case_sensitive: false }
 
   has_many :projects, dependent: :nullify
+  has_many :engagements, through: :projects
 
   before_save :uppercase_code
 
