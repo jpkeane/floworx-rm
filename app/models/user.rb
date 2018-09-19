@@ -48,4 +48,8 @@ class User < ApplicationRecord
     # update_attributes(password_reset_token: SecureRandom.urlsafe_base64, password_reset_token_at: Time.zone.now)
     update(password_reset_token: SecureRandom.urlsafe_base64, password_reset_token_at: Time.zone.now)
   end
+
+  def to_s
+    full_name
+  end
 end
