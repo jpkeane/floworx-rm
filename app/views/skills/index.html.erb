@@ -16,12 +16,14 @@
   <thead>
   <tr>
     <th>Skill</th>
+    <th>Staff</th>
   </tr>
   </thead>
   <tbody>
   <% @skills.each do |skill| %>
     <tr>
       <th scope="row"><%= link_to skill.name, skill_path(skill) %></th>
+      <td><%= skill.staff_resources.count %></td>
     </tr>
   <% end %>
   </tbody>

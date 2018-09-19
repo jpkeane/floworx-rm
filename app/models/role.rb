@@ -1,5 +1,6 @@
 class Role < ApplicationRecord
   has_many :staff_resource_roles, dependent: :destroy
+  has_many :staff_resources, through: :staff_resource_roles
   has_many :engagements, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 100 }
