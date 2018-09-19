@@ -20,7 +20,7 @@
   <tbody>
   <% @engagements.each do |engagement| %>
     <tr>
-      <td scope="row"><%= engagement.full_code %></td>
+      <td scope="row"><%= link_to engagement.full_code, engagement %></td>
       <td><%= engagement %></td>
       <td><%= link_to engagement.client, engagement.client %></td>
       <td><%= link_to engagement.project, engagement.project %></td>

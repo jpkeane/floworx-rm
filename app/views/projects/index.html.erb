@@ -19,6 +19,7 @@
     <th>Code</th>
     <th>Client</th>
     <th>Project Name</th>
+    <th>Engagements</th>
   </tr>
   </thead>
   <tbody>
@@ -27,6 +28,7 @@
       <th scope="row"><%= link_to project.full_code, project_path(project) %></th>
       <th scope="row"><%= link_to project.client.name, client_path(project.client) %></th>
       <td><%= project.name %></td>
+      <td><%= project.engagements.count %></td>
     </tr>
   <% end %>
   </tbody>
