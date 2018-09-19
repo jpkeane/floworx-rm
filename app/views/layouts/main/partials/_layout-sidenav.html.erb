@@ -48,6 +48,10 @@
       <%= link_to projects_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-list-box"></i><div>Projects</div><% end %>
     </li>
 
+    <li class="sidenav-item<%= current_page?(engagements_path) ? ' active' : '' %>">
+      <%= link_to engagements_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-list-box"></i><div>Engagements</div><% end %>
+    </li>
+
     <li class="sidenav-divider mb-1"></li>
     <li class="sidenav-header small font-weight-semibold">UI KITS</li>
 

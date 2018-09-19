@@ -25,4 +25,8 @@ class Project < ApplicationRecord
   def uppercase_code
     code.upcase!
   end
+
+  def to_s
+    name
+  end
 end

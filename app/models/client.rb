@@ -27,4 +27,8 @@ class Client < ApplicationRecord
   def code_and_name_display
     "#{code} - #{name}"
   end
+
+  def to_s
+    name
+  end
 end
