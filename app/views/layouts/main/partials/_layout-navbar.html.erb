@@ -34,7 +34,10 @@
           </span>
         </a>
         <div class="dropdown-menu dropdown-menu-right">
-          <a href="javascript:void(0)" class="dropdown-item"><i class="ion ion-ios-person text-lightest"></i> &nbsp; My profile</a>
+          <%= link_to user_path(current_user), class: 'dropdown-item' do %>
+            <i class="ion ion-ios-person text-lightest"></i> &nbsp; My profile
+          <% end %>
+
           <div class="dropdown-divider"></div>
           <%= link_to logout_path, method: :delete, class: 'dropdown-item' do %>
             <i class="ion ion-ios-log-out text-danger"></i> &nbsp; Log Out
