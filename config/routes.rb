@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :skills
   resources :staff_resources
   resources :engagements
+  resources :users
 
   namespace :wrap do
     get 'charts/c3', to: 'charts#c3', as: :charts_c3

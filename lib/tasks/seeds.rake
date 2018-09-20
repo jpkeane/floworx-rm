@@ -95,6 +95,7 @@ namespace :seed do
     users.each do |p|
       User.create!(first_name: p['First Name'],
                    last_name: p['Last Name'],
+                   slug: p['Slug'],
                    email_address: p['Email Address'],
                    password: p['Password'])
     end

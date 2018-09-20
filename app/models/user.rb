@@ -14,6 +14,15 @@ class User < ApplicationRecord
                             format: { with: VALID_EMAIL_REGEX },
                             uniqueness: { case_sensitive: false }
 
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
+
+  def slug_candidates
+    [
+      full_name
+    ]
+  end
+
   class << self
     # Returns a random token.
     def new_token
