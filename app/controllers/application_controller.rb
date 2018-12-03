@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 
   def logged_in_user
     return if logged_in?
+
     store_location
     flash[:danger] = 'You are not logged in'
     redirect_to login_url
@@ -18,6 +19,7 @@ class ApplicationController < ActionController::Base
 
   def guest_user_only
     return unless logged_in?
+
     flash[:danger] = 'You are already logged in'
     redirect_to root_url
   end
