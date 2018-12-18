@@ -41,4 +41,14 @@ RSpec.describe Client, type: :model do
       expect(Client.active).to eq(pre_count + 3)
     end
   end
+
+  it '#code_and_name_display should show the correct format' do
+    client = FactoryBot.create(:client, code: 'AAAAA', name: 'BBCCDD')
+    expect(client.code_and_name_display).to eq('AAAAA - BBCCDD')
+  end
+
+  it '#to_s should output correct string' do
+    client = FactoryBot.create(:client, name: 'BBCCDD')
+    expect(client.to_s).to eq('BBCCDD')
+  end
 end
