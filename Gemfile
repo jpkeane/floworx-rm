@@ -50,4 +50,17 @@ group :development, :test do
   gem 'pry-rails'
 
   gem 'fuubar'
+  gem 'rspec-rails', '~> 3.6'
+
+  gem 'factory_girl_rails'
+  gem 'faker'
+end
+
+group :test do
+  # Coverage
+  gem 'coveralls', require: false
+
+  # Testing frameworks
+  gem 'capybara'
+  gem 'shoulda-matchers', '~> 3.1'
 end
