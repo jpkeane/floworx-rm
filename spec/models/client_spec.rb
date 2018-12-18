@@ -31,4 +31,13 @@ RSpec.describe Client, type: :model do
     it { is_expected.to validate_length_of(:name).is_at_most(100) }
     it { is_expected.to validate_length_of(:code).is_at_most(5) }
   end
+
+  describe 'methods' do
+    it '#active should return the correct count' do
+      3.times do
+        FactoryBot.create(:client)
+      end
+      expect(Client.active).to eq(3)
+    end
+  end
 end
