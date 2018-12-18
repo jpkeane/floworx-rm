@@ -40,4 +40,11 @@ RSpec.describe Engagement, type: :model do
     it { is_expected.to validate_length_of(:name).is_at_most(100) }
     it { is_expected.to validate_length_of(:code).is_at_most(5) }
   end
+
+  describe 'methods' do
+    it '#to_s should output correct string' do
+      engagement = FactoryBot.create(:engagement, name: 'BBCCDD')
+      expect(engagement.to_s).to eq('BBCCDD')
+    end
+  end
 end
