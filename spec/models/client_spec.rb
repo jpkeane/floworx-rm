@@ -34,10 +34,11 @@ RSpec.describe Client, type: :model do
 
   describe 'methods' do
     it '#active should return the correct count' do
+      pre_count = Client.active
       3.times do
         FactoryBot.create(:client)
       end
-      expect(Client.active).to eq(3)
+      expect(Client.active).to eq(pre_count + 3)
     end
   end
 end
