@@ -10,10 +10,13 @@
 #  updated_at        :datetime         not null
 #
 
-class StaffResourceSkill < ApplicationRecord
-  belongs_to :staff_resource
-  belongs_to :skill
+RSpec.describe StaffResourceSkill, type: :model do
+  describe 'attributes' do
+    it { is_expected.to have_attribute :level }
+  end
 
-  validates :staff_resource_id, uniqueness: { scope: :skill_id }
-  validates :level, presence: true, numericality: { greater_than: 0, less_than: 4 }
+  describe 'relationships' do
+    it { is_expected.to belong_to :staff_resource }
+    it { is_expected.to belong_to :skill }
+  end
 end

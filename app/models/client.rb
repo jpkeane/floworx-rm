@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: clients
+#
+#  id         :bigint(8)        not null, primary key
+#  slug       :string(5)        not null
+#  name       :string(100)      not null
+#  code       :string(5)        not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Client < ApplicationRecord
   validates :name, presence: true, length: { maximum: 100 }
   validates :code, presence: true, length: { maximum: 5 }, uniqueness: { case_sensitive: false }

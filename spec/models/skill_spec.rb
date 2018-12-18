@@ -9,12 +9,9 @@
 #  updated_at :datetime         not null
 #
 
-class Skill < ApplicationRecord
-  has_many :staff_resource_skills, dependent: :destroy
-  has_many :staff_resources, through: :staff_resource_skills
-
-  validates :name, presence: true, length: { maximum: 100 }
-
-  extend FriendlyId
-  friendly_id :name, use: :slugged
+RSpec.describe Skill, type: :model do
+  describe 'attributes' do
+    it { is_expected.to have_attribute :name }
+    it { is_expected.to have_attribute :slug }
+  end
 end

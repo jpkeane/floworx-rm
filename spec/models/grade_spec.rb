@@ -10,12 +10,10 @@
 #  updated_at :datetime         not null
 #
 
-class Grade < ApplicationRecord
-  has_many :staff_resources, dependent: :nullify
-
-  validates :name, presence: true, length: { maximum: 100 }
-  validates :level, numericality: { minimum: 1 }
-
-  extend FriendlyId
-  friendly_id :name, use: :slugged
+RSpec.describe Grade, type: :model do
+  describe 'attributes' do
+    it { is_expected.to have_attribute :name }
+    it { is_expected.to have_attribute :slug }
+    it { is_expected.to have_attribute :level }
+  end
 end

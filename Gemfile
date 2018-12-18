@@ -52,7 +52,7 @@ group :development, :test do
   gem 'fuubar'
   gem 'rspec-rails', '~> 3.6'
 
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'faker'
 end
 

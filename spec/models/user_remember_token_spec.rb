@@ -9,8 +9,12 @@
 #  updated_at      :datetime         not null
 #
 
-class UserRememberToken < ApplicationRecord
-  belongs_to :user
+RSpec.describe UserRememberToken, type: :model do
+  describe 'attributes' do
+    it { is_expected.to have_attribute :remember_digest }
+  end
 
-  validates :remember_digest, presence: true
+  describe 'relationships' do
+    it { is_expected.to belong_to :user }
+  end
 end
