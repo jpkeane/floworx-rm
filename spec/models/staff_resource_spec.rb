@@ -52,4 +52,34 @@ RSpec.describe StaffResource, type: :model do
       end
     end
   end
+
+  describe 'methods' do
+    it '#full_name should return correct string without display name' do
+      sr = FactoryBot.create(:staff_resource)
+      expect(sr.full_name).to eq("#{sr.first_name} #{sr.last_name}")
+    end
+
+    it '#full_name should return correct string with display name' do
+      sr = FactoryBot.create(:staff_resource, display_name: 'King Keano')
+      expect(sr.full_name).to eq('King Keano')
+    end
+
+    it '#to_s should output correct string without display name' do
+      sr = FactoryBot.create(:staff_resource)
+      expect(sr.to_s).to eq("#{sr.first_name} #{sr.last_name}")
+    end
+
+    it '#to_s should return correct string with display name' do
+      sr = FactoryBot.create(:staff_resource, display_name: 'King Keano')
+      expect(sr.to_s).to eq('King Keano')
+    end
+  end
+
+  it '#active should return the correct count' do
+    pre_count = StaffResource.active
+    3.times do
+      FactoryBot.create(:staff_resource)
+    end
+    expect(StaffResource.active).to eq(pre_count + 3)
+  end
 end

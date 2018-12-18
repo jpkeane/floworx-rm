@@ -45,4 +45,8 @@ class StaffResource < ApplicationRecord
   def self.active
     self.count
   end
+
+  def to_s
+    full_name
+  end
 end
