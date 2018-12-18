@@ -10,12 +10,9 @@
 #  updated_at :datetime         not null
 #
 
-class Grade < ApplicationRecord
-  has_many :staff_resources, dependent: :nullify
-
-  validates :name, presence: true, length: { maximum: 100 }
-  validates :level, numericality: { greater_than_or_equal_to: 1 }
-
-  extend FriendlyId
-  friendly_id :name, use: :slugged
+FactoryBot.define do
+  factory :grade do
+    sequence(:name) { |n| "Role #{n}" }
+    level { rand(1..5) }
+  end
 end

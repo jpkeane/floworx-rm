@@ -16,4 +16,10 @@ RSpec.describe Grade, type: :model do
     it { is_expected.to have_attribute :slug }
     it { is_expected.to have_attribute :level }
   end
+
+  describe 'validations' do
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_length_of(:name).is_at_most(100) }
+    it { is_expected.to validate_numericality_of(:level).is_greater_than_or_equal_to(1) }
+  end
 end
