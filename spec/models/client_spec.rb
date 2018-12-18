@@ -18,4 +18,17 @@ RSpec.describe Client, type: :model do
     it { is_expected.to have_attribute :slug }
     it { is_expected.to have_attribute :code }
   end
+
+  describe 'relationships' do
+    it { is_expected.to have_many :projects }
+    it { is_expected.to have_many :engagements }
+  end
+
+  describe 'validations' do
+    it { is_expected.to validate_presence_of :name }
+    it { is_expected.to validate_presence_of :code }
+
+    it { is_expected.to validate_length_of(:name).is_at_most(100) }
+    it { is_expected.to validate_length_of(:code).is_at_most(5) }
+  end
 end
