@@ -32,4 +32,24 @@ RSpec.describe Project, type: :model do
     it { is_expected.to validate_length_of(:name).is_at_most(100) }
     it { is_expected.to validate_length_of(:code).is_at_most(5) }
   end
+
+  describe 'methods' do
+    it '#active should return the correct count' do
+      pre_count = Project.active
+      3.times do
+        FactoryBot.create(:project)
+      end
+      expect(Project.active).to eq(pre_count + 3)
+    end
+
+    it '#to_s should output correct string' do
+      project = FactoryBot.create(:project, name: 'BBCCDD')
+      expect(project.to_s).to eq('BBCCDD')
+    end
+
+    it '#upperercase_code should output correct string' do
+      project = FactoryBot.create(:project, code: 'lllll')
+      expect(project.uppercase_code).to eq('LLLLL')
+    end
+  end
 end
