@@ -1,6 +1,6 @@
 # Start Coveralls coverage
 require 'coveralls'
-Coveralls.wear!
+Coveralls.wear!('rails')
 
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
