@@ -60,4 +60,9 @@ RSpec.describe User, type: :model do
     expect(user.password_reset_token).not_to be_blank
     expect(user.password_reset_token_at).to be_within(2.seconds).of Time.zone.now
   end
+
+  it '#to_s returns correct string' do
+    user = FactoryBot.create(:user, first_name: 'AAA', last_name: 'BBB')
+    expect(user.to_s).to eq('AAA BBB')
+  end
 end
