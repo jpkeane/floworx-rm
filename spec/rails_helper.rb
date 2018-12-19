@@ -1,7 +1,7 @@
 # Start Coveralls coverage
 require 'coveralls'
 Coveralls.wear_merged!
-SimpleCov.merge_timeout 3600
+SimpleCov.use_merging false
 SimpleCov.add_filter('/spec/')
 SimpleCov.add_filter('/config/initializers/assets.rb')
 
