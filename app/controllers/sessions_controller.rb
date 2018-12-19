@@ -33,7 +33,7 @@ class SessionsController < ApplicationController
   end
 
   def unsuccessful_sign_in
-    flash.now[:danger] = 'Invalid username or password'
+    flash.now[:danger] = 'Invalid Email or password'
     render 'new', layout: 'main/layout-blank'
   end
 end
