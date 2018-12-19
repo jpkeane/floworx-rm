@@ -1,9 +1,6 @@
 # Start Coveralls coverage
 require 'coveralls'
-Coveralls.wear_merged!
-SimpleCov.use_merging false
-SimpleCov.add_filter('/spec/')
-SimpleCov.add_filter('/config/initializers/assets.rb')
+Coveralls.wear!
 
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
