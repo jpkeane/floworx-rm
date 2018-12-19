@@ -11,9 +11,17 @@ RSpec.describe SessionsController, type: :controller do
       end
     end
 
-    describe 'POST #create' do
+    describe 'POST #create with valid password' do
       it 'returns http success' do
         post :create, params: { session: { email_address: user.email_address, password: user.password } }
+        expect(response).to have_http_status(:found)
+      end
+    end
+
+    describe 'POST #create with invalid password' do
+      it 'returns http success' do
+        post :create, params: { session: { email_address: user.email_address, password: 'notthepass' } }
+        expect(response).to have_http_status(:success)
       end
     end
   end
